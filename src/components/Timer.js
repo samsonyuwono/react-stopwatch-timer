@@ -5,11 +5,15 @@ class Timer extends Component {
   state = {
     status: false,
     runningTime: 0,
-    splits: []
+    splits: [],
+    selectedSplit: 0
   };
 
-  handleOnClick = () => {
-    if (this.state.runningTime === 0) {
+  handleOnClick = state => {
+    if (
+      this.state.runningTime === 0 ||
+      this.state.selectedSplit === this.state.runningTime
+    ) {
       const startTime = Date.now() - this.state.runningTime;
       this.timer = setInterval(() => {
         this.setState({ runningTime: Date.now() - startTime, status: true });
@@ -18,13 +22,24 @@ class Timer extends Component {
       this.setState({
         splits: [...this.state.splits, this.state.runningTime]
       });
-      console.log(this.state.splits);
     }
+  };
+
+  targetSplit = time => {
+    clearInterval(this.timer);
+    //filters out all splits after slected split
+    const newSplitStart = this.state.splits.filter(split => split <= time);
+    this.setState({
+      status: false,
+      runningTime: time,
+      splits: newSplitStart,
+      selectedSplit: time
+    });
   };
 
   handleOnReset = () => {
     clearInterval(this.timer);
-    this.setState({ runningTime: 0, status: false });
+    this.setState({ status: false, runningTime: 0, splits: [] });
   };
 
   render() {
@@ -36,9 +51,14 @@ class Timer extends Component {
           {status ? "Split" : "Start"}
         </button>
         <button onClick={this.handleOnReset}>Reset</button>
-        <ul>
+        <ul className="split-list">
           {this.state.splits.map(split => (
-            <SplitList key={split} split={split} />
+            <SplitList
+              key={split}
+              split={split}
+              selectedSplit={this.state.selectedSplit}
+              targetSplit={this.targetSplit}
+            />
           ))}
         </ul>
       </div>

@@ -5,5 +5,3 @@ Write a react component that starts a timer when you first click on it. Each sub
 3. Clicking on any split from the list will remove all splits below that and reset timer to split and highlight the split
 
 Is there a reset button that erases all splits
-
-Install Sass
