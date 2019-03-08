@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SplitList from "./SplitList";
+import "../styles/timer.scss";
 
 class Timer extends Component {
   state = {
@@ -46,11 +47,13 @@ class Timer extends Component {
     const { status, runningTime } = this.state;
     return (
       <div className="timer-container">
-        <p>{runningTime} ms</p>
-        <button onClick={this.handleOnClick}>
-          {status ? "Split" : "Start"}
-        </button>
-        <button onClick={this.handleOnReset}>Reset</button>
+        <p className="time">{runningTime} ms</p>
+        <div className="button-wrapper">
+          <button onClick={this.handleOnClick}>
+            {status ? "Split" : "Start"}
+          </button>
+          <button onClick={this.handleOnReset}>Reset</button>
+        </div>
         <ul className="split-list">
           {this.state.splits.map(split => (
             <SplitList

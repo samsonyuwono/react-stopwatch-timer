@@ -1,0 +1,55 @@
+@import "./_master.scss";
+.timer-container {
+  display: inline-block;
+  background-color: #92999e;
+  border: $border;
+  width: 75%;
+  .time {
+    border: $border;
+    background-color: $display-color;
+    width: 50%;
+    margin: 10px auto;
+    padding: 5%;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  button {
+    border: $border;
+    color: black;
+    cursor: pointer;
+    margin: 0 20px;
+    font-size: 15px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    &:nth-child(1) {
+      background-color: #4caf50;
+    }
+    &:nth-child(1):hover {
+      background-color: #95f199;
+    }
+    &:nth-child(2) {
+      background-color: #2196f3;
+    }
+    &:nth-child(2):hover {
+      background-color: #7dbef1;
+    }
+  }
+
+  .split-list {
+    display: inline;
+    list-style: none;
+    li {
+      margin: 0 auto;
+      cursor: pointer;
+      background-color: $display-color;
+      border: $border;
+      width: 50%;
+      font-size: 25px;
+      &:hover {
+        background-color: #dcd9d9;
+      }
+    }
+  }
+}
