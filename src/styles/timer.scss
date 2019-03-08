@@ -20,8 +20,8 @@
     margin: 0 20px;
     font-size: 15px;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     align-items: center;
     &:nth-child(1) {
       background-color: #4caf50;
@@ -36,12 +36,11 @@
       background-color: #7dbef1;
     }
   }
-
   .split-list {
     display: inline;
     list-style: none;
     li {
-      margin: 0 auto;
+      margin: 10px auto;
       cursor: pointer;
       background-color: $display-color;
       border: $border;
