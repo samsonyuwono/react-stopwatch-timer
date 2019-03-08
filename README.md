@@ -1,5 +1,1 @@
-Please run
-
-## `npm start`
-
-to start timer application
+Please run `npm start` to start timer application.
