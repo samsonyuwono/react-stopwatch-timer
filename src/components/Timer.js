@@ -28,7 +28,6 @@ class Timer extends Component {
 
   targetSplit = time => {
     clearInterval(this.timer);
-    //filters out all splits after slected split
     const newSplitStart = this.state.splits.filter(split => split <= time);
     this.setState({
       status: false,
@@ -49,10 +48,12 @@ class Timer extends Component {
       <div className="timer-container">
         <p className="time">{runningTime} ms</p>
         <div className="button-wrapper">
-          <button onClick={this.handleOnClick}>
+          <button className="timer-button" onClick={this.handleOnClick}>
             {status ? "Split" : "Start"}
           </button>
-          <button onClick={this.handleOnReset}>Reset</button>
+          <button className="timer-button" onClick={this.handleOnReset}>
+            Reset
+          </button>
         </div>
         <ul className="split-list">
           {this.state.splits.map(split => (
