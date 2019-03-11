@@ -2,56 +2,61 @@
 
 .timer-container {
   display: inline-block;
-  background: $display-color;
+  margin: 100px 20px;
+  padding: 40px;
   width: 75%;
   background: radial-gradient(#219eb0 32%, #3f679d 88%);
   box-shadow: $box-pop;
   border-radius: 8px;
+
   .time {
     background: $display-color;
     width: 50%;
     margin: 20px auto;
-    padding: 5%;
-    font-size: 28px;
+    padding: 40px;
+    font-size: 2em;
     font-weight: 200;
   }
 
-  .timer-button {
-    position: relative;
-    display: inline-block;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin: 0 20px;
-    font-size: 1.5em;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    box-shadow: $box-pop;
-    &::before {
-      z-index: 0;
-      content: "";
-      position: absolute;
-      top: -7.5px;
-      left: -7.5px;
-      right: -7.5px;
-      bottom: -7.5px;
-      background-color: rgba(235, 235, 235, 0.5);
+  .button-wrapper {
+    padding: 20px 0;
+
+    .timer-button {
+      position: relative;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin: 0 20px;
+      font-size: 1.5em;
       border-radius: 50%;
-      transition: transform 0.2s;
-      opacity: 0.3;
-    }
-    &:nth-child(1) {
-      background-color: #4caf50;
-    }
-    &:nth-child(1):hover {
-      background-color: #95f199;
-    }
-    &:nth-child(2) {
-      background-color: #858586;
-    }
-    &:nth-child(2):hover {
-      background-color: #a0a0a2;
+      height: 90px;
+      width: 90px;
+      box-shadow: $box-pop;
+      &::before {
+        z-index: 0;
+        content: "";
+        position: absolute;
+        top: -7.5px;
+        left: -7.5px;
+        right: -7.5px;
+        bottom: -7.5px;
+        background-color: rgba(235, 235, 235, 0.5);
+        border-radius: 50%;
+        transition: transform 0.2s;
+        opacity: 0.3;
+      }
+      &:nth-child(1) {
+        background-color: #4caf50;
+      }
+      &:nth-child(1):hover {
+        background-color: #95f199;
+      }
+      &:nth-child(2) {
+        background-color: #858586;
+      }
+      &:nth-child(2):hover {
+        background-color: #a0a0a2;
+      }
     }
   }
 
